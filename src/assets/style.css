@@ -1227,6 +1227,22 @@ button:hover {
     padding: 5px 20px;
     min-height: 34px;
   }
+  .space-hearder{
+    height: 190px !important;
+  }
+  .hidden-sm {
+    display: none;
+  }
+  .logo-area{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #fad03b;
+
+  }
+  .mobile-nav {
+    display: block !important;
+  }
 }
 @media only screen and (max-width: 575px) {
   .btn-fill.size-xs,
@@ -1242,6 +1258,10 @@ button:hover {
     min-height: 30px;
     font-size: 12px;
   }
+}
+
+.mobile-nav {
+  display: none;
 }
 .btn-text {
   color: #111111;
