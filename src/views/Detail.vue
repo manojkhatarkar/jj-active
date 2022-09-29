@@ -13,7 +13,7 @@
                         <div class="breadcrumbs-area">
                             <h1>Event Details</h1>
                             <ul>
-                                <li><a href="#">Home</a></li>
+                                <li><router-link to="/">Home</router-link></li>
                                 <li> {{detail.name}} </li>
                             </ul>
                         </div>
@@ -37,11 +37,12 @@
                         <div class="event-description">
                             <h2 class="title title-bold color-dark"> {{detail.name}} </h2>
                             <p v-html="detail.description"></p>
-                            <a :href="detail.map" target="_blank"><i class="fa fa-map-marker" aria-hidden="true"></i> {{detail.venue}},<br /> {{detail.address}}, {{detail.state}},{{detail.city}} </a>
-                            <p><i class="fa fa-calendar" aria-hidden="true"></i> {{detail.date}}, {{detail.time}} </p>
+                            <i class="fa fa-map-marker icn-clr-change" aria-hidden="true"></i> <strong>Location:</strong>   <a :href="detail.map" target="_blank"><p style="margin-left: 10%; !important">{{detail.venue}},<br /> {{detail.address}}, {{detail.state}},{{detail.city}} </p></a>
+                            <i class="fa fa-calendar icn-clr-change" aria-hidden="true"></i> <strong>Event Start Date and Time:</strong>  <p style="margin-left: 10%; !important">  {{detail.date}}, {{detail.time}} </p>
                             <template v-if="detail.items">
                             <ul class="mission-meta contact-text-yellows mb-4" v-for="(item,d) in JSON.parse(detail.items)" :key="d">
-                                <li><i aria-hidden="true" class="fa fa-user"></i><a href="#"> {{item.name}} </a></li>
+                                <li style="text-align: center;"><a style="font-size:18px;font-weight:bold;">{{item.designation}}</a></li>
+                                <li><i aria-hidden="true" class="fa fa-user"></i><a> {{item.name}} </a></li>
                                 <li><i class="fa fa-phone" aria-hidden="true"></i><a :href="'tel:'+item.mobile"> {{item.mobile}} </a></li>
                                 <li><i aria-hidden="true" class="fa fa-telegram"></i><a :href="'mailto:'+item.email"> {{item.email}} </a></li>
                             </ul>
@@ -141,6 +142,7 @@
                 </div>
             </section> -->
             <iframe id="googleMap" style="width:100%; height:396px;" :src="detail.map"></iframe>
+           
         </section>
         <!-- Error Page Area End Here -->
         <!-- Footer Area Start Here -->
@@ -533,6 +535,8 @@ export default {
                     size: ev.detail.size
                 }
                 ev.allSize.push(sizeary)
+                // console.log('dasdadadadads');
+                // console.log(ev.detail)
             }
         },
         reviewRating() {

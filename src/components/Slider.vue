@@ -2,7 +2,7 @@
  <div class="slider-area slider-direction-layout1 slider-layout1 overlay-slider">
                 <div class="bend niceties preview-1">
                     <div id="ensign-nivoslider-1" class="slides">
-                       <carousel3 :autoplay="true" v-if="showData" :nav="false" :dots="false" :items="1" :responsive="{
+                       <carousel3 :autoplay="false" v-if="showData" :nav="false" :dots="false" :items="1" :responsive="{
           0: { items: 1 },
           576: { items: 1 },
           600: { items: 1 },

@@ -2,7 +2,9 @@
 <div>
     <button class="btn btn-primary" @click="exportToPDF">Print Download</button>
     <div id="element-to-convert">
-        <img :src="$root.URL_ROOT+'uploads/Certificate/'+certificateData.image" />
+         <!-- <img :src="$root.URL_ROOT+'uploads/Certificate/'+certificateData.image" />  -->
+         <div v-html="tempImg">{{tempImg}}</div>
+            <!-- <img src="../assets/img/certificate.png" /> -->
         <h1 class="name" :style="'color:'+certificateData.color+';font-size:'+certificateData.font+';'"> {{name}} </h1>
     </div>
 </div>
@@ -21,7 +23,8 @@ export default {
             certificateImage: this.$route.params.image ? this.$route.params.image : '',
             name: '',
             image: '',
-            certificateData: []
+            certificateData: [],
+            tempImg:'',
         };
     },
     mounted() {
@@ -33,7 +36,7 @@ export default {
         exportToPDF() {
             html2pdf(document.getElementById("element-to-convert"), {
                 margin: 1,
-                filename: "i-was-html.pdf",
+                filename: "certificate.pdf",
             });
         },
         generatePDF() {
@@ -65,6 +68,8 @@ export default {
                         var data = response.data;
                         console.log(data);
                         self.certificateData = data.certificate;
+                        var img=self.$root.URL_ROOT+`uploads/Certificate/`+self.certificateData.image;
+                        self.tempImg='<img src="'+img+'" />';
                     });
             }
         },
@@ -76,7 +81,7 @@ export default {
 .name {
     font-weight: bold;
     position: absolute;
-    top: 58%;
+    top: 60%;
     z-index: 999;
     left: 50%;
     transform: translate(-50%, -50%);

@@ -59,6 +59,77 @@ Author URI: https://radiustheme.com Version: 2.1
 /*----------------------------------------
 1.1 Typography
 ----------------------------------------*/
+
+/*start manoj css*/
+.event-row{
+    margin-top:20px;
+}
+.body-box{
+    height: 300px;
+    border-radius: 20px;
+    box-shadow: 0px 0px 13px 1px #e1e1e1;
+     
+}
+.reg-btn {
+  position: absolute;
+  bottom: 0px;
+  width: 58%;
+  z-index: 0;
+  font-size: 20px;
+  text-align: center;
+  top: 75%;
+  height: 42px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.col-sty{
+  margin-bottom:40px;  
+}
+.header-body-box{
+    text-align: center;
+    background-color: #8cc63e;
+    border-radius: 20px 20px 0px 0px;
+}
+.heading-txt{
+    font-weight:bold;
+}
+.event-name-box{
+    text-align: center;
+}
+.event-nm{
+    font-weight: bold;
+    color: #00b0ff;
+}
+.location-box{
+    padding:0px 10px;
+}
+.icn-styl{
+    color: #f50057;
+    margin-right: 10px;
+    margin-left: 10px;
+    font-size:25px;
+}
+.timing-box{
+  padding:10px 10px;
+}
+.icn-clr-change{
+  color: #00b0ff;
+  font-size: 22px !important;
+}
+.contact-label-black{
+  float: left;
+  color: #000;
+}
+
+/*end css*/
+
+
+
+
+
+.sidenav{
+  z-index:9999 !important;
+}
 html {
   background: #ffffff;
   font-size: 62.5%;
@@ -74,6 +145,9 @@ html {
   }
 }
 @media only screen and (max-width: 767px) {
+  .d-fixed{
+    position:fixed;z-index: 999;width: 100%; top: 79px;
+  }
   html {
     font-size: 40%;
   }
@@ -1207,11 +1281,19 @@ button:hover {
   padding: 5px 26px;
   min-height: 40px;
 }
+@media only screen and (max-width: 1600px) {
+  .space-hearder{
+    height: 500px !important;
+  }
+}
 @media only screen and (max-width: 1199px) {
   .btn-fill.size-xs,
   .btn-ghost.size-xs {
     padding: 5px 25px;
     min-height: 38px;
+  }
+  .space-hearder{
+    height: 450px !important;
   }
 }
 @media only screen and (max-width: 991px) {
@@ -1219,6 +1301,9 @@ button:hover {
   .btn-ghost.size-xs {
     padding: 5px 22px;
     min-height: 36px;
+  }
+  .space-hearder{
+    height: 400px !important;
   }
 }
 @media only screen and (max-width: 767px) {
@@ -1228,7 +1313,7 @@ button:hover {
     min-height: 34px;
   }
   .space-hearder{
-    height: 190px !important;
+    height: 180px !important;
   }
   .hidden-sm {
     display: none;
@@ -2053,6 +2138,13 @@ button:hover {
   overflow: hidden;
   /* text-align: center; */
 }
+.hide{
+  display:none;
+}
+.contact-label{
+    float: left;
+    color: #fff;
+}
 
 .overlay-icon-layout1 {
   position: relative;
@@ -2060,7 +2152,7 @@ button:hover {
   text-align: center;
 }
 .overlay-icon-layout1:after {
-  content: url('img/figure/figure-icon1.png');
+  /* content: url('img/figure/figure-icon1.png'); */
   height: 100%;
   width: 100%;
   position: absolute;
@@ -8911,7 +9003,8 @@ ul.mission-meta.contact-text-yellows.mb-4 {
   color: #000;
 }
 .space-hearder{
-  height: 482px;
+  /*height: 482px;*/
+  height: 600px;
 }
 .footer-widget-menu ul li a.router-link-exact-active{
   color: #fff !important;
@@ -8972,4 +9065,7 @@ ul.mission-meta.contact-text-yellows.mb-4 {
 }
 .radio-area div label{
   color: #fff !important;
+}
+.d-fixed{
+  position:fixed;z-index: 0;width: 100%;top: 79px;
 }

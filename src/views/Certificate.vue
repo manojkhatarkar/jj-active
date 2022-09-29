@@ -13,7 +13,7 @@
                         <h1>Certificate</h1>
                         <ul>
                             <li>
-                                <a href="#">Home</a>
+                                <router-link to="/" >Home</router-link>
                             </li>
                             <li>Download Certificate</li>
                         </ul>
@@ -78,7 +78,11 @@
                                     {{myCertificate.event}}
                                 </td>
                                 <td data-th="Due Date">
-                                    <router-link :to="{name:'DownloadCertificate',params:{name:getbtoa(myCertificate.name),image:getbtoa(myCertificate.image)}}">Download Certificate</router-link>
+                                    <a :href="$root.URL_ROOT +'event/Class1/index.php?name='+myCertificate.name+'&img='+myCertificate.image" target="_blank" >Download Certificate</a>
+                                   
+                                    <!-- <router-link :to="{name:'DownloadCertificate',params:{name:getbtoa(myCertificate.name),image:getbtoa(myCertificate.image)}}">Download Certificate</router-link>
+                                    -->
+
                                     <!-- <a :href="$root.URL_ROOT+'uploads/Certificate/'+myCertificate.image" download>Download</a> -->
                                     <!-- <div @click="generatePDF()" class="np-btn">Generate PDF</div> -->
                                     <!-- <div ref="document">
@@ -216,10 +220,12 @@ export default {
                     if (data.status == 'success') {
                         vi.showDetails = true
                         vi.userCertificate = data.certificate
+                        console.log(vi.userCertificate)
                     } else {
                         vi.$toasted.global.error({
                             message: data.msg
                         })
+                        
                     }
                 })
             }

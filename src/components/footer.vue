@@ -53,22 +53,22 @@
                                 <div class="footer-widget-social">
                                     <ul style="margin-bottom:20px">
                                         <li>
-                                            <a href="#" title="facebook">
+                                            <a href="https://www.facebook.com/jjActive.wlcw.au/" title="facebook">
                                                 <i class="fa fa-facebook" aria-hidden="true"></i>
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="#" title="twitter">
+                                            <a href="https://twitter.com/jjsrunning" title="twitter">
                                                 <i class="fa fa-twitter" aria-hidden="true"></i>
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="#" title="instagram">
+                                            <a href="https://www.secure.instagram.com/jjscycling/?hl=en" title="instagram">
                                                 <i class="fa fa-instagram" aria-hidden="true"></i>
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="#" title="youtube">
+                                            <a href="https://www.youtube.com/c/JJsRunning" title="youtube">
                                                 <i class="fa fa-youtube" aria-hidden="true"></i>
                                             </a>
                                         </li>

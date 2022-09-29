@@ -32,30 +32,35 @@
                                     <div class="row">
                                         <div class="col-lg-6">
                                             <div class="form-group">
+                                                <label class="contact-label-black">Name*</label>
                                                 <input type="text" placeholder="Name*" v-model="name" class="form-control" name="name" id="form-name" data-error="Name field is required" required="">
                                                 <div class="help-block with-errors"></div>
                                             </div>
                                         </div>
                                         <div class="col-lg-6">
                                             <div class="form-group">
+                                                <label class="contact-label-black">Mobile*</label>
                                                 <input type="number" placeholder="Mobile*" v-model="mobile" class="form-control" name="mobile" id="form-mobile" data-error="Mobile field is required" required="">
                                                 <div class="help-block with-errors"></div>
                                             </div>
                                         </div>
                                        <div class="col-lg-6">
                                             <div class="form-group">
+                                                <label class="contact-label-black">Email*</label>
                                                 <input type="email" placeholder="Email*" v-model="email" class="form-control" name="email" id="form-email" data-error="Email field is required" required="">
                                                 <div class="help-block with-errors"></div>
                                             </div>
                                         </div>
                                          <div class="col-lg-6">
                                             <div class="form-group">
+                                                <label class="contact-label-black">Subject*</label>
                                                 <input type="text" placeholder="Subject*" v-model="subject" class="form-control" name="email" id="form-email" data-error="Subject field is required" required="">
                                                 <div class="help-block with-errors"></div>
                                             </div>
                                         </div>
                                         <div class="col-lg-12">
                                             <div class="form-group">
+                                                <label class="contact-label-black">Message*</label>
                                                 <textarea placeholder="Message*" v-model="msg" class="textarea form-control" name="message" id="form-message" rows="10" cols="20" data-error="Message field is required" required=""></textarea>
                                                 <div class="help-block with-errors"></div>
                                             </div>

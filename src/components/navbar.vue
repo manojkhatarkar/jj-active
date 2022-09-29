@@ -1,20 +1,21 @@
 <template>
 <header>
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" @click="closeNav()">&times;</a>
+
+        <router-link :to="{name:'Home'}">Home</router-link>
+
+        <router-link :to="{name:'aboutus'}">About us</router-link>
+
+        <router-link :to="{name:'allEvent'}">Events</router-link>
+
+        <router-link :to="{name:'Certificate'}">Certificate</router-link>
+
+        <router-link :to="{name:'contactus'}">Contact Us</router-link>
+
+    </div>
     <div class="mobile-nav">
-        <div id="mySidenav" class="sidenav">
-            <a href="javascript:void(0)" class="closebtn" @click="closeNav()">&times;</a>
-
-            <router-link :to="{name:'Home'}">Home</router-link>
-
-            <router-link :to="{name:'aboutus'}">About us</router-link>
-
-            <router-link :to="{name:'allEvent'}">Events</router-link>
-
-            <router-link :to="{name:'Certificate'}">Certificate</router-link>
-
-            <router-link :to="{name:'contactus'}">Contact Us</router-link>
-
-        </div>
+     
         <div class="logo-area">
             <router-link to="./">
                 <img :src="$root.URL_ROOT+'uploads/Content/'+site_logo.image" width="150" alt="logo">
@@ -29,7 +30,7 @@
                 <div class="row no-gutters d-flex align-items-center">
                     <div class="col-lg-2 col-md-2 d-none d-lg-block">
                         <div class="logo-area">
-                            <router-link to="./">
+                            <router-link to="/">
                                 <img :src="$root.URL_ROOT+'uploads/Content/'+site_logo.image" width="150" alt="logo">
                             </router-link>
                         </div>
@@ -266,7 +267,7 @@ export default {
     height: 100%;
     width: 0;
     position: fixed;
-    z-index: 1;
+    z-index: 999;
     top: 0;
     left: 0;
     background-color: #111;

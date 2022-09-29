@@ -7,10 +7,10 @@
         </div>
         <div class="sponsonrs-layout1" style="overflow:hidden;">
             <div class="row sponsonrs-row-border">
-                <carousel2 :autoplay="false" v-if="showData" :nav="false" :dots="false" :items="4">
+                <carousel2 :autoplay="false" v-if="showData" :dots="false" :items="1" :responsive="{0:{items:1,nav:false},600:{items:1,nav:false},900:{items:1,nav:false},1200:{items:1,nav:false}}">
                     <div class="col-md-12 col-sm-12 col-12" v-for="data in pageData" :key="data.id">
                         <div class="sponsonrs-box">
-                            <a href="#">
+                            <a>
                                 <img :src="$root.URL_ROOT+'uploads/Content/'+data.image" class="img-fluid w-100" />
                             </a>
                         </div>

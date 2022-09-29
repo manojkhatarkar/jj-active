@@ -13,7 +13,7 @@
                         <h1>About Us</h1>
                         <ul>
                             <li>
-                                <a href="#">Home</a>
+                                <router-link to="/">Home</router-link>
                             </li>
                             <li>About Us</li>
                         </ul>

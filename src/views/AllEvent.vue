@@ -13,7 +13,7 @@
                                 <h1>Event Schedule</h1>
                                 <ul>
                                     <li>
-                                        <a href="#">Home</a>
+                                        <router-link to="/">Home</router-link>
                                     </li>
                                     <li>Schedule</li>
                                 </ul>
@@ -51,7 +51,7 @@
                                         <li>
                                             <h3 class="title title-regular color-light size-lg">Location</h3>
                                             <p><i style="margin-right:10px;" class="fa fa-map-marker" aria-hidden="true"></i>{{latest.state +','+latest.city}} </p>
-                                    <router-link :to="{name:'Event',params:{id:latest.id}}" class="btn-fill size-xs color-yellow border-radius-5  btn-register" style="margin-top: 10px;">Register</router-link>
+                                    <router-link :to="'/Event/'+latest.id" class="btn-fill size-xs color-yellow border-radius-5  btn-register" style="margin-top: 10px;">Register</router-link>
 
                                         </li>
                                     </ul>

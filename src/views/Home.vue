@@ -1,14 +1,18 @@
 <template>
 <body>
     <div id="wrapper" class="wrapper">
-       <div style="position:fixed;z-index: 0;width: 100%;">
+       <div style="position:fixed;z-index: 999;width: 100%;">
        <!-- Header Area Start Here -->
         <Header />
         <!-- Header Area End Here -->
+    </div>
+    <div class="d-fixed">
+
         <!-- Slider Area Start Here -->
         <Slider />
         <!-- Slider Area End Here -->
-        </div>
+    </div>
+
         <div class="space-hearder"></div>
         <!-- About Area Start Here -->
         <section class="overlay-icon-layout-event section-space-equal bg-light" style="background-color:#f1f1f1 !important;">
@@ -32,7 +36,7 @@
                     <h2>Event Schedule</h2>
                     <!-- <p>Dorem ipsum dolor sit. Incidunt laborum beatae earum nihil odio consequatur</p> -->
                 </div>
-                <div class="table-responsive">
+                <div class="table-responsive hide">
                     <table class="table table-striped schedule-layout1">
                         <tbody class="menu-list">
                             <tr v-for="latest in latestData" :key="latest.id" class="menu-item">
@@ -61,6 +65,41 @@
                         </tbody>
                     </table>
                 </div>
+
+                <div class="row event-row">
+                    <template v-for="latest in latestData" >
+                        <div class="col-md-4 col-sty" :key="latest.id">
+                            <div class="body-box">
+                                <div class="header-body-box">
+                                    <div class="header-txt">
+                                        <h3 class="heading-txt">{{latest.date | formatDate}} </h3>
+                                    </div>
+                                </div>
+                                <div class="main-content-box">
+                                    <div clas="content-txt">
+                                        <div class="event-name-box">
+                                            <h3 class="event-nm">{{latest.name}}</h3>
+                                        </div>
+                                        <div class="location-box">    
+                                            <i class="fa fa-map-marker icn-styl" aria-hidden="true"></i>{{latest.state +','+latest.city}}
+                                        </div>
+                                        <div class="timing-box">
+                                            <i class="fa fa-clock-o icn-styl" aria-hidden="true"></i>{{latest.stime}} - {{latest.etime}}
+                                        </div>
+                                       
+
+                                    </div>
+                                </div>
+                               
+                                    <router-link :to="{name:'Event',params:{id:latest.id}}" class="btn btn-info reg-btn" >Register</router-link>
+                                
+                            </div>
+                            
+                            
+                        </div>
+                    </template>
+                </div>
+
                 <div class="row">
                     <div class="col-12 text-center">
                         <router-link to="AllEvent" title="More Schedule" class="loadmore-one-item btn-fill size-lg border-radius-5 color-yellow margin-t-50">More Schedule</router-link>
@@ -103,6 +142,7 @@
                                             <div class="row">
                                                 <div class="col-lg-6">
                                                     <div class="form-group">
+                                                        <label class="contact-label">Name*</label>
                                                         <validation-provider rules="required|alpha_spaces" v-slot="{ errors }">
                                                             <input type="text" placeholder="Name*" v-model="fields.fullname" class="form-control" name="name" id="form-name" data-error="Name field is required" required="">
                                                             <span class="error-msgs">{{ errors[0] }}</span>
@@ -111,6 +151,7 @@
                                                 </div>
                                                 <div class="col-lg-6">
                                                     <div class="form-group">
+                                                        <label class="contact-label">Email*</label>
                                                         <validation-provider rules="required|email" v-slot="{ errors }">
                                                             <input type="email" placeholder="Email *" class="form-control" v-model="fields.email" name="email" id="form-email" data-error="Email field is required" required="">
                                                             <span class="error-msgs">{{ errors[0] }}</span>
@@ -119,6 +160,7 @@
                                                 </div>
                                                 <div class="col-lg-6">
                                                     <div class="form-group">
+                                                        <label class="contact-label">Phone*</label>
                                                         <validation-provider rules="required|integer|min:10|max:10" v-slot="{ errors }">
                                                             <input type="number" placeholder="Phone*" class="form-control" name="Mobile Number" v-model="fields.mobile" id="form-phone" data-error="Phone field is required" required="">
                                                             <span class="error-msgs">{{ errors[0] }}</span>
@@ -127,6 +169,7 @@
                                                 </div>
                                                 <div class="col-lg-6">
                                                     <div class="form-group">
+                                                        <label class="contact-label">Subject*</label>
                                                         <validation-provider rules="required|alpha_spaces" v-slot="{ errors }">
                                                             <input type="text" placeholder="Subject *" class="form-control" v-model="fields.e_name" name="Emergency Contact Name" id="form-phone1" data-error="Phone field is required" required="">
                                                             <span class="error-msgs">{{ errors[0] }}</span>
@@ -136,6 +179,7 @@
 
                                                 <div class="col-lg-12">
                                                     <div class="form-group">
+                                                        <label class="contact-label">Address*</label>
                                                         <validation-provider rules="required" v-slot="{ errors }">
                                                             <textarea placeholder="Address*" class="textarea form-control" name="Address" v-model="fields.address" id="form-address" rows="5" cols="10" data-error="address field is required" required=""></textarea>
                                                             <span class="error-msgs">{{ errors[0] }}</span>
